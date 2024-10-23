@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Testimonial from '../components/Testimonial.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FAQItem from '../components/FAQItem.astro';
+---
+
+<Layout title="Your Name - Web Developer & SEO Specialist">
+	<header class="hero">
+		<div class="hero-overlay"></div>
+		<div class="hero-content">
+			<h1>Your Name</h1>
+			<h2 class="subtitle">Web Developer & SEO Specialist</h2>
+			<p class="intro">
+				Crafting fast, responsive, and search-engine-friendly websites
+				that drive results for businesses of all sizes.
+			</p>
+			<div class="cta-buttons">
+				<a href="#portfolio" class="cta-button primary">View Portfolio</a>
+				<a href="#contact" class="cta-button secondary">Get in Touch</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section id="services" class="section">
+			<h2>Services</h2>
+			<div class="services-grid">
+				<Card
+					title="Web Development"
+					body="Custom websites built with modern technologies for optimal performance and user experience."
+				/>
+				<Card
+					title="SEO Optimization"
+					body="Improve your search engine rankings and drive organic traffic to your website."
+				/>
+				<Card
+					title="Responsive Design"
+					body="Ensure your website looks great and functions perfectly on all devices and screen sizes."
+				/>
+			</div>
+		</section>
+
+		<section id="portfolio" class="section">
+			<h2>Portfolio</h2>
+			<div class="portfolio-grid">
+				<ProjectCard
+					title="E-commerce Platform"
+					description="A fully-featured online store built with React and Node.js"
+					image="https://via.placeholder.com/300x200"
+					tags={['React', 'Node.js', 'MongoDB']}
+				/>
+				<ProjectCard
+					title="Corporate Website"
+					description="A sleek and professional website for a Fortune 500 company"
+					image="https://via.placeholder.com/300x200"
+					tags={['WordPress', 'Custom Theme', 'SEO']}
+				/>
+				<ProjectCard
+					title="Mobile App"
+					description="An iOS and Android app for a startup in the fitness industry"
+					image="https://via.placeholder.com/300x200"
+					tags={['React Native', 'Firebase', 'UX Design']}
+				/>
+			</div>
+		</section>
+
+		<section id="testimonials" class="section">
+			<h2>Testimonials</h2>
+			<div class="testimonials-grid">
+				<Testimonial
+					quote="Working with Your Name was a game-changer for our online presence. Our website traffic has increased by 200% since the redesign!"
+					author="John Doe, CEO of TechCorp"
+				/>
+				<Testimonial
+					quote="The attention to detail and commitment to delivering a high-quality product was impressive. I highly recommend Your Name for any web development project."
+					author="Jane Smith, Founder of StartupX"
+				/>
+			</div>
+		</section>
+
+		<section id="pricing" class="section">
+			<h2>Pricing</h2>
+			<div class="pricing-grid">
+				<PricingCard
+					name="Basic"
+					price="$999"
+					features={[
+						'Custom Website Design',
+						'Responsive Layout',
+						'Basic SEO Optimization',
+						'1 Month of Support'
+					]}
+				/>
+				<PricingCard
+					name="Pro"
+					price="$2,499"
+					features={[
+						'Advanced Custom Design',
+						'E-commerce Integration',
+						'Advanced SEO Package',
+						'3 Months of Support',
+						'Performance Optimization'
+					]}
+				/>
+				<PricingCard
+					name="Enterprise"
+					price="Custom"
+					features={[
+						'Fully Custom Solution',
+						'Advanced Functionality',
+						'Comprehensive SEO Strategy',
+						'12 Months of Support',
+						'Dedicated Project Manager'
+					]}
+				/>
+			</div>
+		</section>
+
+		<section id="faq" class="section">
+			<h2>Frequently Asked Questions</h2>
+			<div class="faq-grid">
+				<FAQItem
+					question="How long does it take to complete a website?"
+					answer="The timeline varies depending on the project's complexity. A simple website might take 2-4 weeks, while a more complex one could take 2-3 months."
+				/>
+				<FAQItem
+					question="Do you offer ongoing maintenance and support?"
+					answer="Yes, we offer various maintenance and support packages to keep your website up-to-date and running smoothly."
+				/>
+				<FAQItem
+					question="Can you help improve my existing website?"
+					answer="Absolutely! We offer website audits and can provide recommendations for improvements or completely redesign your existing site."
+				/>
+			</div>
+		</section>
+
+		<section id="contact" class="section">
+			<h2>Get in Touch</h2>
+			<form class="contact-form">
+				<input type="text" name="name" placeholder="Your Name" required>
+				<input type="email" name="email" placeholder="Your Email" required>
+				<textarea name="message" placeholder="Your Message" required></textarea>
+				<button type="submit" class="cta-button primary">Send Message</button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Your Name. All rights reserved.</p>
+	</footer>
+</Layout>
+
+<style>
+	/* Hero styles */
+	.hero {
+		background-image: url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+		background-size: cover;
+		background-position: center;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		color: var(--text-light);
+		text-align: center;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+		backdrop-filter: blur(3px);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+		padding: 2rem;
+		animation: fadeIn 1s ease-out;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	.hero h1 {
+		font-size: 4rem;
+		margin-bottom: 0.5rem;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		background: linear-gradient(45deg, var(--text-light), rgb(var(--accent-light)));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.hero .subtitle {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-light));
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.hero .intro {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+		line-height: 1.6;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.cta-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: 0.8em 1.5em;
+		text-decoration: none;
+		border-radius: 30px;
+		font-weight: bold;
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.cta-button.primary {
+		background-color: rgb(var(--accent));
+		color: var(--text-light);
+		box-shadow: 0 4px 6px rgba(var(--accent), 0.25);
+	}
+
+	.cta-button.secondary {
+		background-color: transparent;
+		color: var(--text-light);
+		border: 2px solid var(--text-light);
+	}
+
+	.cta-button:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.cta-button.primary:hover {
+		background-color: rgb(var(--accent-dark));
+	}
+
+	.cta-button.secondary:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	/* Main content styles */
+	.section {
+		padding: 4rem 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		text-align: center;
+		color: rgb(var(--accent-light));
+	}
+
+	.services-grid,
+	.portfolio-grid,
+	.testimonials-grid,
+	.pricing-grid,
+	.faq-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	/* Contact form styles */
+	.contact-form {
+		display: grid;
+		gap: 1rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		width: 100%;
+		padding: 0.8rem;
+		border: 1px solid rgba(var(--accent-light), 0.3);
+		border-radius: 4px;
+		background-color: var(--background-light);
+		color: var(--text-light);
+	}
+
+	.contact-form textarea {
+		min-height: 150px;
+	}
+
+	/* Footer styles */
+	footer {
+		background-color: var(--background-light);
+		color: var(--text-light);
+		text-align: center;
+		padding: 2rem;
+		margin-top: 4rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 3rem;
+		}
+
+		.hero .subtitle {
+			font-size: 1.5rem;
+		}
+
+		.hero .intro {
+			font-size: 1rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+		}
+
+		.section {
+			padding: 3rem 1rem;
+		}
+
+		.section h2 {
+			font-size: 2rem;
+		}
+	}
+</style>

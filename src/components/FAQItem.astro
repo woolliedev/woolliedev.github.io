@@ -1,0 +1,33 @@
+---
+interface Props {
+	question: string;
+	answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<div class="faq-item">
+	<h3>{question}</h3>
+	<p>{answer}</p>
+</div>
+
+<style>
+	.faq-item {
+		background-color: var(--background-light);
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 1rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+	h3 {
+		margin: 0 0 1rem 0;
+		font-size: 1.2rem;
+		color: rgb(var(--accent-light));
+	}
+	p {
+		margin: 0;
+		font-size: 1rem;
+		color: var(--text-dark);
+	}
+</style>
